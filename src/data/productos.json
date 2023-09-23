@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Ashtanga Yoga",
+    "description": "Curso para nivel intermedio",
+    "price": 9000,
+    "thumbnail": "img1.jpg",
+    "code": "abc123",
+    "stock": 20,
+    "category": "Curso online"
+  },
+  {
+    "id": 2,
+    "title": "Hatha Yoga",
+    "description": "Curso para nivel inicial",
+    "price": 6250,
+    "thumbnail": "img2.jpg",
+    "code": "def456",
+    "stock": 15,
+    "category": "Curso online"
+  },
+  {
+    "id": 3,
+    "title": "Yoga Terapéutico",
+    "description": "Curso para nivel inicial",
+    "price": 6500,
+    "thumbnail": "img3.jpg",
+    "code": "jkl101",
+    "stock": 14,
+    "category": "Curso presencial"
+  },
+  {
+    "id": 4,
+    "title": "Vinyasa Yoga",
+    "description": "Curso para nivel intermedio",
+    "price": 8750,
+    "thumbnail": "img4.jpg",
+    "code": "aad445",
+    "stock": 8,
+    "category": "Curso online"
+  }
+]
