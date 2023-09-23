@@ -20,7 +20,7 @@ router.get("/:cartId", async (req, res) => {
     const getCartById = await cartService.getProductsInCart(cartId);
     getCartById
       ? res.json(getCartById)
-      : res.json("El carrito buscado no fue encontrado");
+      : res.json("El carrito no fue encontrado");
   } catch (error) {
     res.json(error.message);
   }
