@@ -74,16 +74,34 @@ export class CartManager {
     }
   }
 
-  async addProductsInCart(CartId) {
+  async addProductsInCart(CartId, productId) {
     try {
       const getCartById = await this.readCarts();
-      const getId = getCartById.find((CartsId) => {
-        return CartsId.id === CartId;
-      });
-      getId.forEach((element) => {
-        element = getId.slice(-1);
-        return element;
-      });
+      const cartIndex = getCartById.findIndex((cart) => cart.id === CartId);
+
+      if (cartIndex === -1) {
+        return "El carrito no fue encontrado";
+      }
+
+      const cart = getCartById[cartIndex];
+      const productIndex = cart.products.findIndex(
+        (product) => product.id === productId
+      );
+
+      if (productIndex === -1) {
+        // El producto no existe en el carrito, agregamos uno nuevo
+        cart.products.push({ id: productId, quantity: 1 });
+      } else {
+        // El producto ya existe en el carrito, incrementamos la cantidad
+        cart.products[productIndex].quantity++;
+      }
+
+      await fs.promises.writeFile(
+        this.path,
+        JSON.stringify(getCartById, null, "\t")
+      );
+
+      return "Producto agregado al carrito";
     } catch (error) {
       return error.message;
     }
